@@ -14,20 +14,23 @@ class Map:
 		self.img_h = i_h
 		self.ss = 25
 
+	def load_map(self, file):
+		with open(file, "r") as f:
+			read()
+
 	def draw_map(self, img):
 		y = 0
-
 		for y in range(0, self.img_h):
 			if (y / self.ss <= self.height):
 				self.draw_map_line(img, y)
-
 		img = Image.fromarray(img, 'RGB')
 		img.save('result.png')
 
 	def draw_map_line(self, img, y):
-		j = 0
-		for j in range(0, self.img_w):
-			if (y % self.ss == 0):
-				img[y, j] = self.BLACK
-			else:
-				img[y, j] = self.WHITE
+		x = 0
+		for x in range(0, self.img_w):
+			if (x / self.ss <= self.width):
+				if (y % self.ss == 0 or x % self.ss == 0):
+					img[y, x] = self.BLACK
+				else:
+					img[y, x] = self.WHITE
