@@ -6,15 +6,16 @@ class Player:
 		self.posx = 0
 		self.posy = 0
 		self.dir = 0
+		self.speed = 0.08
 
 	def move_up(self):
-		self.posy += 1
+		self.posy -= 0.05
 
 	def move_down(self):
-		self.posy -= 1
+		self.posy += 0.05
 
 	def move_left(self):
-		self.posx -= 1
+		self.posx -= 0.05
 
 	def move_right(self):
-		self.posy += 1
+		self.posx += 0.05
