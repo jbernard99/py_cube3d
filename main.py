@@ -1,5 +1,6 @@
 import numpy as np
 import random as rdm
+from math import floor
 import pygame
 import player
 import map
@@ -46,8 +47,8 @@ while is_playing:
 	if keys[pygame.K_RIGHT] or keys[pygame.K_d]:
 		player.move_right()
 	
-	px = player.posx * map.ss
-	py = player.posy * map.ss
+	px = floor(player.posx * map.ss)
+	py = floor(player.posy * map.ss)
 	print(f"Player : [{px}, {py}]")
 	p = pygame.Rect(px, py, 10, 10)
 	gameDisplay.fill(map.BLACK)
